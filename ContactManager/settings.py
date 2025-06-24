@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'contact',
     'rest_framework',
     'drf_yasg',
-    
+    'faker',
     ]
 
 MIDDLEWARE = [
