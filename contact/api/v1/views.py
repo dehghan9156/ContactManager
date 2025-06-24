@@ -18,5 +18,9 @@ from ...models import *
 class ContactGetApiView(generics.ListAPIView):
     serializer_class = ContactSerilizer
     queryset = Contact.objects.all()
-    permission_classes = IsAuthenticated
+    permission_classes = [IsAuthenticated]
 
+class ContactRetrieveApiView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class =ContactSerilizer
+    queryset = Contact.objects.all()
+    permission_classes = [IsAuthenticated]
