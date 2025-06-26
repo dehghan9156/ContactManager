@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 
 class Contact(models.Model):
@@ -14,3 +14,8 @@ class Contact(models.Model):
     gender = models.CharField(max_length=10,choices=Gender_Choice,default='unknown')
     job = models.CharField(max_length=150)
     phone = models.CharField(max_length=150)
+
+
+    def get_absolute_url(self):
+        return reverse("contact:api-v1:contact-retrieve", kwargs={"pk": self.pk})
+    
